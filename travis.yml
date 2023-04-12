@@ -1,0 +1,13 @@
+sudo: required
+services:
+
+
+services:
+  - docker
+
+before_install:
+  - docker build -t gmark/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true gmark/docker-react npm run test
+
