@@ -10,7 +10,6 @@ services:
       - /app/node_modules
       - .:/app
   tests:
-    stdin_open: true
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -18,3 +17,4 @@ services:
       - /app/node_modules
       - .:/app
     command: ["npm", "run", "test"]
+
